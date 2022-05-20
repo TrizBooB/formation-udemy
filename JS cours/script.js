@@ -102,5 +102,18 @@ for(var x = 1; x <= 10; x++)
 {
     console.log(x);
 }
+*/
 
 // JS FUNCTION
+function multiply(number1, number2, number3)
+{
+    var result = number1 * number2 * number3;
+    return result;
+}
+
+var a = 5;
+var b = 6;
+
+var resultMultiply = multiply(a, b, a);
+console.log(resultMultiply);
+console.log(multiply(2,5,1))
