@@ -14,6 +14,7 @@ console.log(num);
 */
 
 // JS Bool & Compare
+/*
 var x = 5;
 var y = 12;
 var myBool = x > 3 || y < 10;
@@ -32,3 +33,51 @@ console.log(false || false);
 console.log("-----------------------------");
 console.log(!true);
 console.log(!false);
+*/
+
+// JS Conditions
+/*
+var x = 16;
+
+if (x>10)
+{
+    if (x>15)
+    {
+        console.log("très bien");
+    }
+    else {
+        console.log("bien");
+    }
+}
+else if (x<10)
+{
+    console.log("Pas bien");
+}
+else
+{
+    console.log("bof...")
+}
+
+var myColor = "yellow";
+
+switch(myColor)
+{
+    case "blue":
+        console.log("I love blue too (Bluetooth ^^)");
+        break;
+    case "red":
+        console.log("RED dead RED");
+        break;
+    case "purple":
+        console.log("The lovely one, you rock dude ;)");
+        break;
+    case "yellow":
+    case "pink":
+        console.log("Argh.. I don't like it..");
+        break;
+    default:
+        console.log("I don't know this color..");
+}
+*/
+
+// JS BOUCLE
