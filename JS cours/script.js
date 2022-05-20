@@ -81,3 +81,26 @@ switch(myColor)
 */
 
 // JS BOUCLE
+/*
+var number = 1;
+while(number<=3)
+{
+    console.log(number);
+    number++;
+}
+
+number = 1
+do
+{
+    console.log(number);
+    number++;
+}
+while (number<=3)
+
+
+for(var x = 1; x <= 10; x++)
+{
+    console.log(x);
+}
+
+// JS FUNCTION
