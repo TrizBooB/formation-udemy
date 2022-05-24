@@ -105,9 +105,10 @@ for(var x = 1; x <= 10; x++)
 */
 
 // JS FUNCTION
+/*
 function multiply(number1, number2, number3)
 {
-    var result = number1 * number2 * number3;
+    var resultMult = number1 * number2 * number3;
     return result;
 }
 
@@ -117,3 +118,29 @@ var b = 6;
 var resultMultiply = multiply(a, b, a);
 console.log(resultMultiply);
 console.log(multiply(2,5,1))
+*/
+
+// JS Array
+var fruits = ["pomme", "poire", "ananas", "banane"];
+
+console.log(fruits.length);
+console.log(fruits);
+console.log(fruits[0]);
+console.log("------------------");
+
+for(var x = 0; x < fruits.length; x++)
+{
+    console.log(fruits[x]);
+}
+console.log("------------------");
+
+fruits.push("kiwi");
+console.log(fruits);
+fruits.pop();
+console.log(fruits);
+console.log(fruits.slice(2,4));
+
+console.log("------------------");
+var myArray = [[1,2],[3,7],[4,5,6]];
+
+console.log(myArray[1][1]);
