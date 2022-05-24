@@ -121,6 +121,7 @@ console.log(multiply(2,5,1))
 */
 
 // JS Array
+/*
 var fruits = ["pomme", "poire", "ananas", "banane"];
 
 console.log(fruits.length);
@@ -144,3 +145,46 @@ console.log("------------------");
 var myArray = [[1,2],[3,7],[4,5,6]];
 
 console.log(myArray[1][1]);
+*/
+
+// JS Object
+/*
+var dog = {
+    nom: "Choupette",
+    couleur: "blanc",
+    age: 4
+};
+
+console.log(dog);
+console.log(dog.age);
+console.log(dog["nom"]);
+console.log("------------------");
+
+for(var property in dog)
+{
+    console.log(dog[property]);
+}
+console.log("------------------");
+
+var dog2 = new Object();
+dog2.nom = "Kiki";
+dog2.couleur = "Noir";
+dog2.age = 8;
+
+console.log(dog2);
+console.log("------------------");
+
+var dog3 = new Object();
+dog2.nom = "Marley";
+dog2.couleur = "Beige";
+dog2.age = 5;
+dog3.aboie = function(number){
+    for(var i=1; i<=number; i++)
+    {
+        console.log(i.toString() + " Wouaf !");
+    }
+};
+
+console.log(dog3.aboie(3));
+console.log("------------------");
+*/
