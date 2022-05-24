@@ -188,3 +188,11 @@ dog3.aboie = function(number){
 console.log(dog3.aboie(3));
 console.log("------------------");
 */
+
+// JS constructeur
+function Dog(nom, couleur, age)
+{
+    this.nom = nom;
+    this.couleur = couleur;
+    this.age = age;
+}
