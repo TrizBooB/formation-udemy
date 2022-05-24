@@ -195,4 +195,16 @@ function Dog(nom, couleur, age)
     this.nom = nom;
     this.couleur = couleur;
     this.age = age;
+
+    this.aboie = function()
+    {
+        console.log(this.nom + ": Wouaf !");
+    }
 }
+
+var petitCaniche = new Dog("Choupette", "white", 4);
+var grosPitBull = new Dog("Rex", "black", 2);
+
+console.log(petitCaniche);
+console.log(grosPitBull);
+petitCaniche.aboie();
