@@ -43,7 +43,7 @@ window.onload = function()
         {
             ctx.save();
             ctx.fillStyle = "#ff0000";
-            for(var i = 0; i < this.body.lenght; i++)
+            for(var i = 0; i < this.body.length; i++)
             {
                 drawBlock(ctx, this.body[i]);
             }
