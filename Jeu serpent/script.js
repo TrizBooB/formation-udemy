@@ -20,7 +20,7 @@ window.onload = function()
         canvas.style.border = "1px solid";
         document.body.appendChild(canvas);
         ctx = canvas.getContext('2d');
-        snakee = new Snake([[6,4], [5,4], [4,4]], "right");
+        snakee = new Snake([[6,4], [5,4], [4,4], [3,4], [2,4], [1,4]], "right");
         applee = new Apple([10,10]);
         refreshCanvas();
     }
@@ -33,9 +33,14 @@ window.onload = function()
         {
             // GAME OVER
         }
-        else {
+        else 
+        {
+            if(snakee.isEatingApple(applee))
+            {
+                applee.setNewPosition();
+                // LE serpent à manger la pomme
+            }
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        
             snakee.draw();
             applee.draw();
             setTimeout(refreshCanvas, delay);
@@ -141,6 +146,15 @@ window.onload = function()
 
             return wallCollision || snakeCollision;
         };
+
+        this.isEatingApple = function(appleToEat)
+        {
+            var head = this.body[0];
+            if(head[0] === appleToEat.position[0] && head[1] === appleToEat.position[1])
+                return true;
+            else
+                return false;
+        };
     }
 
     function Apple(position)
@@ -157,6 +171,12 @@ window.onload = function()
             ctx.arc(x, y, radius, 0, Math.PI*2, true);
             ctx.fill();
             ctx.restore();
+        };
+        this.setNewPosition = function() 
+        {
+            var newX = Math.round(Math.random() * (widthInBlock - 1));
+            var newY = Math.round(Math.random() * (heightInBlock - 1));
+            this.position = [newX, newY];
         };
     }
 
