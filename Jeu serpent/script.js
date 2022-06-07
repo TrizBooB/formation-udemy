@@ -27,11 +27,20 @@ window.onload = function()
 
     function refreshCanvas()
     {
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         snakee.advance();
-        snakee.draw();
-        applee.draw();
-        setTimeout(refreshCanvas, delay);
+
+        if(snakee.checkCollision()) 
+        {
+            // GAME OVER
+        }
+        else {
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        
+            snakee.draw();
+            applee.draw();
+            setTimeout(refreshCanvas, delay);
+        }
+        
     }
 
     function drawBlock(ctx, position)
@@ -79,6 +88,7 @@ window.onload = function()
             this.body.unshift(nextPosition); // ajoute un élément au début du tableau
             this.body.pop(); //retire le dernier élément du tableau
         };
+
         this.setDirection = function(newDirection)
         {
             var allowedDirection;
@@ -100,6 +110,7 @@ window.onload = function()
                 this.direction = newDirection;
             }
         };
+
         this.checkCollision = function()
         {
             var wallCollision = false;
@@ -114,7 +125,21 @@ window.onload = function()
             var maxY = heightInBlock - 1;
             var isNotBetweenHorizontalWalls = snakeX < minX || snakeX > maxX;
             var isNotBetweenVerticalWalls = snakeY < minY || snakeY > maxY;
+            
+            if(isNotBetweenHorizontalWalls || isNotBetweenVerticalWalls)
+            {
+                wallCollision = true;
+            }
 
+            for(var i = 0; i < rest.length; i++)
+            {
+                if(snakeX === rest[i][0] && snakeY === rest[i][1])
+                {
+                    snakeCollision = true;
+                }
+            }
+
+            return wallCollision || snakeCollision;
         };
     }
 
